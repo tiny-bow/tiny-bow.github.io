@@ -1,0 +1,551 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    cursor: default;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.content {
+    margin: auto;
+    max-width: calc(min(40rem, 100%));
+    padding: 1rem;
+}
+
+.dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dialog-content {
+    max-width: 50vw;
+    max-height: 50vh;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+a {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li > ol,
+ol > li > ul,
+ul > li > ul,
+ol > li > ol {
+    margin-top: 1rem;
+    margin-left: 4rem;
+}
+
+space {
+    flex-grow: 1;
+}
+
+pre > code, dt > code {
+    display: block;
+    max-height: 50vh;
+    overflow: auto;
+    scrollbar-width: thin;
+    text-wrap: nowrap;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p:not(:first-child) {
+    margin-top: 1rem;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    padding: 1rem;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1 {
+    font-size: 4em;
+    line-height: .75em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3, h4 {
+    font-size: 1em;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: hsl(273, 16%, 34%);
+    color: white;
+}
+
+h1 {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+h1 ~ em {
+    display: block;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+h2, h3, h4 {
+    margin-top: 2rem;
+}
+
+input[type="search"] {
+    background-color: hsla(0, 0%, 98%, 0.5);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="search"],
+input[type="search"]::placeholder {
+    color: rgba(0, 0, 0, 0.728);
+}
+
+
+#nav-wrap {
+    display: flex;
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+nav {
+    display: flex;
+    align-self: stretch;
+}
+
+nav.vertical {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+}
+
+nav.vertical:has(> *:only-child) {
+    justify-content: flex-start;
+}
+
+nav.horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+nav.horizontal:has(> *:only-child) {
+    justify-content: flex-end;
+}
+
+nav > * {
+    display: block;
+}
+
+nav.vertical > *:not(:first-child) {
+    margin-top: 1rem;
+}
+
+nav.horizontal > *:not(:first-child) {
+    margin-left: 1rem;
+}
+
+h2, h3, h4 {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+a {
+    color: white;
+    text-decoration: underline dashed;
+    text-underline-offset: .2rem;
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    left: -.5rem;
+    width: 0;
+    overflow: show;
+    text-decoration: none;
+    font-size: .5rem;
+    opacity: 0.5;
+}
+
+header {
+    margin-bottom: 4rem;
+}
+
+header > *:first-child {
+    align-self: flex-start;
+}
+
+#bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#bio-facts {
+    margin: 1rem 0;
+    align-self: flex-start;
+}
+
+#bio-contact {
+    margin-top: 1rem;
+}
+
+#bio-contact {
+    text-align: right;
+}
+
+#ribbon-blurb {
+    margin: 10rem 0;
+    display: block;
+    text-align: center;
+}
+
+#other-projects {
+    margin-top: 2rem;
+}
+
+#discord-dialog .dialog-content {
+    max-width: 30rem;
+}
+
+header > h2 {
+    padding: 0;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+li:not(:first-child),
+dl:not(:first-child) {
+    margin-top: 1rem;
+}
+
+dt:has(kbd),
+dt:has(kbd) + dd {
+    display: inline;
+}
+
+kbd {
+    display: inline-block;
+    border: 1px solid white;
+    text-align: center;
+    min-width: 3em;
+    line-height: 2.5em;
+    border-radius: .5em;
+    padding: .1em .5em;
+    margin: 0 .2em;
+    background: hsla(272, 12%, 21%, 0.5);
+}
+
+.dialog {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.dialog-content {
+    background: hsl(273, 16%, 34%);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.zig-doc {
+    margin: 0 auto;
+    max-width: min(1024px, 100%);
+}
+
+.tok-builtin {
+    color: #ff894c;
+}
+
+.tok-comment {
+    color: #aa7;
+    font-style: italic;
+}
+
+.tok-fn {
+    color: #B1A0F8;
+    font-weight: bold;
+}
+
+.tok-null {
+    color: #ff8080;
+}
+
+.tok-number {
+    color: #ff8080;
+}
+
+.tok-type {
+    color: #68f;
+    font-weight: bold;
+}
+
+.tok-kw {
+    color: #b074bc;
+}
+
+.tok-str {
+    color: #2e5;
+}
+
+
+code {
+    text-wrap: nowrap;
+    white-space: pre;
+    background: rgb(40, 44, 52);
+    font-family: "Roboto Mono", monospace;
+    padding: .2em;
+    line-height: 1.75em;
+    border-radius: .5em;
+}
+
+code.equation {
+    font-family: "Noto Serif", "Noto Serif JP", serif, monospace, sans-serif;
+    color: pink;
+    background: rgb(93, 49, 99)
+}
+
+dt:has(code) + dd,
+pre:has(code) + div:has(p) {
+    margin-top: 1rem;
+}
+
+
+#sectNav {
+    font-size: 1.2em;
+}
+
+#listFnErrors *:not(:first-child),
+#listSearchResults *:not(:first-child),
+#listParams *:not(:first-child),
+#listFields *:not(:first-child),
+#listTypes *:not(:first-child),
+#listNamespaces *:not(:first-child),
+#listFns *:not(:first-child),
+#listErrSets *:not(:first-child) {
+    margin-top: 1rem;
+}
+
+#sectNav,
+#listFnErrors,
+#listSearchResults,
+#listParams,
+#listFields,
+#listTypes,
+#listNamespaces,
+#listFns,
+#listErrSets,
+section,
+td > p {
+    display: block;
+    padding: 1rem;
+}
+
+#fnProto, #tldDocs, p + section {
+    margin-top: 2rem;
+}
+
+#listParams > div:not(:first-child) {
+    margin-top: 1rem;
+}
+
+#sectNav,
+#listFnErrors,
+#listSearchResults,
+#listParams,
+#listFields,
+#listTypes,
+#listNamespaces,
+#listFns,
+#listErrSets,
+td > p,
+table,
+section {
+    background: hsla(272, 12%, 21%, 0.5);
+    width: 100%;
+    border-radius: 1rem;
+}
+
+td > code {
+    display: block;
+    overflow: auto;
+    scrollbar-width: thin;
+    text-wrap: nowrap;
+}
+
+
+#list-nav-eql {
+    display: inline;
+}
+
+#listNav:not(:has(li)):not(:has(~ .error)) + #list-nav-eql {
+    display: none;
+}
+
+
+#search {
+    margin-top: 1rem;
+}
+
+#listNav {
+    display: flex;
+    flex-direction: row;
+}
+
+#sectNav {
+    text-align: center;
+}
+
+#sectNav h3,
+#sectNav ul,
+#sectNav ul li {
+    display: inline;
+}
+
+#listNav,
+#status {
+    margin-top: 1rem;
+}
+
+#status.hidden + #listNav::before {
+    margin-right: .5rem;
+}
+
+#listNav li:not(:first-child)::before {
+    content: ".";
+}
+
+#status.hidden + #listNav::before,
+#listNav li:not(:first-child)::before,
+#status {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#status.hidden + #listNav::before,
+#status {
+    color: hsl(293, 44%, 72%);
+}
+
+
+#listNav li {
+    margin: 0;
+}
+
+#listNav li ::marker {
+    margin: 0;
+}
+
+#package-description {
+    margin: 0 auto;
+    padding-top: 4rem;
+    text-align: left;
+}
+
+#sectNav a,
+code a {
+    color: hsl(293, 44%, 72%);
+    text-decoration: underline;
+}
+
+#sectNav > p,
+header > h2,
+.dialog-content > h3 {
+    margin-top: 0;
+}
+
+#sectNav:has(~ #sectSearchResults:not(.hidden)),
+#sectNav:has(~ #sectSearchNoResults:not(.hidden)) {
+    display: none;
+}
+
+
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.inline {
+    display: inline !important;
+}
+
+.hidden {
+    display: none !important;
+}
